@@ -3,6 +3,7 @@
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
+$gray-light: #999;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -117,6 +118,49 @@ footer {
   @include box_sizing;
 }
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .form-group;
+  @extend .has-error;
+  margin-bottom: 0;
+}
+
+/* users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $gray-lighter;
+    &:last-child {
+      border-bottom: 1px solid $gray-lighter;
+    }
+  }
+}
+
 /* sidebar */
 
 aside {
@@ -147,47 +191,32 @@ aside {
   margin-right: 10px;
 }
 
-/* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-/* forms */
-#error_explanation {
-  color: #f00;
-  ul {
-    list-style: none;
-    margin: 0 0 18px 0;
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
   }
 }
 
-.field_with_errors {
-  @extend .form-group;
-  @extend .has-error;
-  margin-bottom: 0;
-}
-
-/* users index */
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-top: 1px solid $gray-lighter;
-    &:last-child {
-      border-bottom: 1px solid $gray-lighter;
-    }
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
   }
 }
 
@@ -219,33 +248,3 @@ aside {
   }
 }
 
-/* sidebar */
-
-.stats {
-  overflow: auto;
-  a {
-    float: left;
-    padding: 0 10px;
-    border-left: 1px solid $gray-lighter;
-    color: gray;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: blue;
-    }
-  }
-  strong {
-    display: block;
-  }
-}
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-}
