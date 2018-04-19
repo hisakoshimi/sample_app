@@ -9,9 +9,9 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'will_paginate-bootstrap', '1.0.1'
 
-group :development do
-  gem 'sqlite3', '1.3.9'
-end
+#group :development do
+#  gem 'sqlite3', '1.3.9'
+#end
 
 gem 'sass-rails', '4.0.3'
 gem 'uglifier', '2.5.3'
@@ -23,3 +23,6 @@ gem 'jbuilder', '1.5.3'
 group :doc do
   gem 'sdoc', '0.4.1', require: false
 end
+
+gem 'sqlite3', group: :test
+gem 'pg', group: [:development, :production]
